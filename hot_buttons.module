@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * hot_tables.module
+ */
+
+include_once 'hot_tables.features.inc';
+
+/**
+ * Implementation of hook_entity_info_alter()
+ */
+function hot_tables_entity_info_alter(&$entity_info){
+  // Basic table
+  $entity_info['fieldable_panels_pane']['bundles']['hot_table'] = array(
+    'label' => t('Table'),
+    'pane category' => t('Widgets'),
+    'pane top level' => FALSE,
+    'pane icon' => drupal_get_path('module', 'hot_tables') . '/images/icon_table.png',
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/hot-table',
+      'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+}
