@@ -1,7 +1,7 @@
 {
-  "name": "hot_tables",
-  "version": "0.0.2",
-  "description": "Table widgets for HotSauce.",
+  "name": "hot_buttons",
+  "version": "0.0.1",
+  "description": "Buttons fields and fieldable buttons",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
