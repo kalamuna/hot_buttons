@@ -62,6 +62,38 @@ function hot_buttons_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_hot_button-field_button_size'
+  $field_instances['field_collection_item-field_hot_button-field_button_size'] = array(
+    'bundle' => 'field_hot_button',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<p>Fancy larger or smaller buttons? Add <code>.btn-lg</code>, <code>.btn-sm</code>, or <code>.btn-xs</code> for additional sizes.</p>
+<p><a href="http://getbootstrap.com/css/#buttons-sizes">Bootstrap: Button Sizes</a></p>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_button_size',
+    'label' => 'Size',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_hot_button-field_button_style'
   $field_instances['field_collection_item-field_hot_button-field_button_style'] = array(
     'bundle' => 'field_hot_button',
@@ -86,7 +118,7 @@ function hot_buttons_field_default_field_instances() {
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_button_style',
-    'label' => 'Sytle Option',
+    'label' => 'Style Option',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -148,10 +180,13 @@ function hot_buttons_field_default_field_instances() {
 <a href="#" class="btn btn-xs btn-link">Link</a>
 ');
   t('<a href="http://getbootstrap.com/css/#buttons">Bootstrap Buttons</a>');
+  t('<p>Fancy larger or smaller buttons? Add <code>.btn-lg</code>, <code>.btn-sm</code>, or <code>.btn-xs</code> for additional sizes.</p>
+<p><a href="http://getbootstrap.com/css/#buttons-sizes">Bootstrap: Button Sizes</a></p>');
   t('Button');
   t('Link');
   t('Provide a valid url and title for your button.');
-  t('Sytle Option');
+  t('Size');
+  t('Style Option');
 
   return $field_instances;
 }

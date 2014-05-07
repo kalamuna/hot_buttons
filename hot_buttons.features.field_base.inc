@@ -40,27 +40,33 @@ function hot_buttons_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_hot_button'
-  $field_bases['field_hot_button'] = array(
+  // Exported field_base: 'field_button_size'
+  $field_bases['field_button_size'] = array(
     'active' => 1,
-    'cardinality' => 5,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_hot_button',
+    'field_name' => 'field_button_size',
     'foreign keys' => array(),
     'indexes' => array(
-      'revision_id' => array(
-        0 => 'revision_id',
+      'value' => array(
+        0 => 'value',
       ),
     ),
     'locked' => 0,
-    'module' => 'field_collection',
+    'module' => 'list',
     'settings' => array(
-      'hide_blank_items' => 1,
-      'path' => '',
+      'allowed_values' => array(
+        '' => 'Default button',
+        'btn-lg' => 'Large button',
+        'btn-sm' => 'Small button',
+        'btn-xs' => 'Extra small button',
+        'btn-block' => 'Block level',
+      ),
+      'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'field_collection',
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_button_style'
@@ -92,6 +98,29 @@ function hot_buttons_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_hot_button'
+  $field_bases['field_hot_button'] = array(
+    'active' => 1,
+    'cardinality' => 5,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hot_button',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'hide_blank_items' => 1,
+      'path' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
   );
 
   return $field_bases;
