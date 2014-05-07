@@ -97,15 +97,19 @@ function hot_buttons_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_hot_button-field_button_style'
   $field_instances['field_collection_item-field_hot_button-field_button_style'] = array(
     'bundle' => 'field_hot_button',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'btn-default',
+      ),
+    ),
     'deleted' => 0,
-    'description' => '<a href="#" class="btn btn-xs btn-default">Default</a>
-<a href="#" class="btn btn-xs btn-primary">Primary</a>
-<a href="#" class="btn btn-xs btn-success">Success</a>
-<a href="#" class="btn btn-xs btn-info">Info</a>
-<a href="#" class="btn btn-xs btn-warning">Warning</a>
-<a href="#" class="btn btn-xs btn-danger">Danger</a>
-<a href="#" class="btn btn-xs btn-link">Link</a>
+    'description' => '<a href="#" class="btn btn-xs btn-default" disabled="true">Default</a>
+<a href="#" class="btn btn-xs btn-primary" disabled="true">Primary</a>
+<a href="#" class="btn btn-xs btn-success" disabled="true">Success</a>
+<a href="#" class="btn btn-xs btn-info" disabled="true">Info</a>
+<a href="#" class="btn btn-xs btn-warning" disabled="true">Warning</a>
+<a href="#" class="btn btn-xs btn-danger" disabled="true">Danger</a>
+<a href="#" class="btn btn-xs btn-link" disabled="true">Link</a>
 ',
     'display' => array(
       'default' => array(
@@ -118,7 +122,7 @@ function hot_buttons_field_default_field_instances() {
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_button_style',
-    'label' => 'Style Option',
+    'label' => 'Style',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -164,20 +168,20 @@ function hot_buttons_field_default_field_instances() {
       'active' => 0,
       'module' => 'field_collection',
       'settings' => array(),
-      'type' => 'field_collection_hidden',
+      'type' => 'field_collection_embed',
       'weight' => -4,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('<a href="#" class="btn btn-xs btn-default">Default</a>
-<a href="#" class="btn btn-xs btn-primary">Primary</a>
-<a href="#" class="btn btn-xs btn-success">Success</a>
-<a href="#" class="btn btn-xs btn-info">Info</a>
-<a href="#" class="btn btn-xs btn-warning">Warning</a>
-<a href="#" class="btn btn-xs btn-danger">Danger</a>
-<a href="#" class="btn btn-xs btn-link">Link</a>
+  t('<a href="#" class="btn btn-xs btn-default" disabled="true">Default</a>
+<a href="#" class="btn btn-xs btn-primary" disabled="true">Primary</a>
+<a href="#" class="btn btn-xs btn-success" disabled="true">Success</a>
+<a href="#" class="btn btn-xs btn-info" disabled="true">Info</a>
+<a href="#" class="btn btn-xs btn-warning" disabled="true">Warning</a>
+<a href="#" class="btn btn-xs btn-danger" disabled="true">Danger</a>
+<a href="#" class="btn btn-xs btn-link" disabled="true">Link</a>
 ');
   t('<a href="http://getbootstrap.com/css/#buttons">Bootstrap Buttons</a>');
   t('<p>Fancy larger or smaller buttons? Add <code>.btn-lg</code>, <code>.btn-sm</code>, or <code>.btn-xs</code> for additional sizes.</p>
@@ -186,7 +190,7 @@ function hot_buttons_field_default_field_instances() {
   t('Link');
   t('Provide a valid url and title for your button.');
   t('Size');
-  t('Style Option');
+  t('Style');
 
   return $field_instances;
 }

@@ -77,7 +77,7 @@ function hot_buttons_defaultconfig_field_default_fields() {
         'active' => 0,
         'module' => 'field_collection',
         'settings' => array(),
-        'type' => 'field_collection_hidden',
+        'type' => 'field_collection_embed',
         'weight' => -4,
       ),
     ),
