@@ -4,22 +4,22 @@
  * hot_tables.module
  */
 
-include_once 'hot_button.features.inc';
+include_once 'hot_buttons.features.inc';
 
 /**
  * Implementation of hook_entity_info_alter()
  */
-function hot_button_entity_info_alter(&$entity_info){
+function hot_buttons_entity_info_alter(&$entity_info){
   // Basic table
-  $entity_info['fieldable_panels_pane']['bundles']['hot_button'] = array(
+  $entity_info['fieldable_panels_pane']['bundles']['hot_buttons'] = array(
     'label' => t('Button'),
     'pane category' => t('Widgets'),
     'pane top level' => FALSE,
-    'pane icon' => drupal_get_path('module', 'hot_button') . '/images/icon_button.png',
+    'pane icon' => drupal_get_path('module', 'hot_buttons') . '/images/icon_button.png',
     'admin' => array(
       'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
       'bundle argument' => 4,
-      'real path' => 'admin/structure/fieldable-panels-panes/manage/hot-button',
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/hot-buttons',
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
