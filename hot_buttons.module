@@ -25,7 +25,10 @@ function hot_buttons_entity_info_alter(&$entity_info){
   );
 }
 
-
+/**
+ * Implements  hook_field_collection_item_view().
+ * Theme the field  collection like it should be.
+ */
 function hot_buttons_field_collection_item_view($field_collection_item, $view_mode, $langcode) {
   $content = $field_collection_item->content;
   if($content['#bundle'] == 'field_hot_button'){
@@ -40,7 +43,7 @@ function hot_buttons_field_collection_item_view($field_collection_item, $view_mo
       unset($content['field_button_size']);
     }
     $content['field_button_link'][0]['#element']['attributes'] = array(
-      'class' => implode(' ', array('btn', $style, $size)) 
+      'class' => implode(' ', array('btn', $style, $size))
     );
     $field_collection_item->content = $content;
     dpm($field_collection_item);
