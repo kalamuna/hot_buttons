@@ -18,7 +18,7 @@ function hot_buttons_field_default_field_instances() {
     'description' => 'Provide a valid url and title for your button.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
@@ -71,7 +71,7 @@ function hot_buttons_field_default_field_instances() {
 <p><a href="http://getbootstrap.com/css/#buttons-sizes">Bootstrap: Button Sizes</a></p>',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
@@ -113,7 +113,7 @@ function hot_buttons_field_default_field_instances() {
 ',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
@@ -136,6 +136,38 @@ function hot_buttons_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'fieldable_panels_pane-hot_buttons-field_button_group'
+  $field_instances['fieldable_panels_pane-hot_buttons-field_button_group'] = array(
+    'bundle' => 'hot_buttons',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Group your buttons together in a button group, learn more at <a href="http://getbootstrap.com/components/#btn-groups">Bootstrap: Button Groups</a>
+<strong>If you select a button group size, do not select the individual buttons size</strong>',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_key',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'fieldable_panels_pane',
+    'field_name' => 'field_button_group',
+    'label' => 'Bootstrap Button Group',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => -3,
+    ),
+  );
+
   // Exported field_instance: 'fieldable_panels_pane-hot_buttons-field_hot_button'
   $field_instances['fieldable_panels_pane-hot_buttons-field_hot_button'] = array(
     'bundle' => 'hot_buttons',
@@ -144,16 +176,12 @@ function hot_buttons_field_default_field_instances() {
     'description' => '<a href="http://getbootstrap.com/css/#buttons">Bootstrap Buttons</a>',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_view',
+        'type' => 'field_collection_fields',
         'weight' => 0,
       ),
     ),
@@ -187,6 +215,9 @@ function hot_buttons_field_default_field_instances() {
   t('<p>Fancy larger or smaller buttons? Add <code>.btn-lg</code>, <code>.btn-sm</code>, or <code>.btn-xs</code> for additional sizes.</p>
 <p><a href="http://getbootstrap.com/css/#buttons-sizes">Bootstrap: Button Sizes</a></p>');
   t('Bootstrap Button');
+  t('Bootstrap Button Group');
+  t('Group your buttons together in a button group, learn more at <a href="http://getbootstrap.com/components/#btn-groups">Bootstrap: Button Groups</a>
+<strong>If you select a button group size, do not select the individual buttons size</strong>');
   t('Link');
   t('Provide a valid url and title for your button.');
   t('Size');

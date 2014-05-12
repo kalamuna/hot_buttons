@@ -10,6 +10,36 @@
 function hot_buttons_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_button_group'
+  $field_bases['field_button_group'] = array(
+    'active' => 1,
+    'cardinality' => 3,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_button_group',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'btn-group' => 'Button Group',
+        'btn-group-justified' => 'Button Group Justified',
+        'btn-group-vertical' => 'Button Group Vertical',
+        'btn-group-lg' => ' Button Group Large',
+        'btn-group-sm' => ' Button Group Small',
+        'btn-group-xs' => ' Button Group Extra-Small',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_button_link'
   $field_bases['field_button_link'] = array(
     'active' => 1,

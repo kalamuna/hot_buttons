@@ -53,16 +53,12 @@ function hot_buttons_defaultconfig_field_default_fields() {
       'description' => '<a href="http://getbootstrap.com/css/#buttons">Bootstrap Buttons</a>',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'field_collection',
           'settings' => array(
-            'add' => 'Add',
-            'delete' => 'Delete',
-            'description' => TRUE,
-            'edit' => 'Edit',
             'view_mode' => 'full',
           ),
-          'type' => 'field_collection_view',
+          'type' => 'field_collection_fields',
           'weight' => 0,
         ),
       ),
@@ -102,14 +98,28 @@ function hot_buttons_defaultconfig_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_fieldable_panels_pane__hot_buttons';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '-5',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'title' => array(
+          'default' => array(
+            'weight' => '-5',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_fieldable_panels_pane__hot_buttons'] = $strongarm;
