@@ -5,6 +5,7 @@
  */
 
 include_once 'hot_buttons.features.inc';
+define('HOT_BUTTONS_PATH', drupal_get_path('module', 'hot_buttons'));
 
 /**
  * Implementation of hook_entity_info_alter()
@@ -15,7 +16,7 @@ function hot_buttons_entity_info_alter(&$entity_info){
     'label' => t('Button'),
     'pane category' => t('Widgets'),
     'pane top level' => FALSE,
-    'pane icon' => drupal_get_path('module', 'hot_buttons') . '/images/icon_button.png',
+    'pane icon' => HOT_BUTTONS_PATH . '/images/icon_button.png',
     'admin' => array(
       'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
       'bundle argument' => 4,
@@ -67,5 +68,12 @@ function hot_buttons_preprocess_panels_pane($variables){
  * Implements hook_theme_registry_alter().
  */
 function hot_buttons_theme_registry_alter(&$theme_registry) {
-  dpm($theme_registry);
+  $theme_registry['field_collection_item__field_hot_button'] =
+    array(
+      'template' => HOT_BUTTONS_PATH . '/templates/field-collection-item--field-hot-button',
+      'theme path' => HOT_BUTTONS_PATH,
+      'type' => 'module'
+    );
+
+
 }
