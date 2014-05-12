@@ -58,6 +58,9 @@ function hot_buttons_field_collection_item_view($field_collection_item, $view_mo
  */
 function hot_buttons_preprocess_panels_pane($variables){
   if(isset($variables['content']['#bundle']) && $variables['content']['#bundle'] == 'hot_buttons'){
+    if(isset($variables['content']['field_hot_button'])){
+      $variables['content']['field_hot_button']['theme'] = 'markup';
+    }
     if(isset($variables['content']['field_button_group'])){
 
     }
@@ -67,13 +70,31 @@ function hot_buttons_preprocess_panels_pane($variables){
 /**
  * Implements hook_theme_registry_alter().
  */
-function hot_buttons_theme_registry_alter(&$theme_registry) {
+function hot_buttons_theme() {
   $theme_registry['field_collection_item__field_hot_button'] =
     array(
-      'template' => HOT_BUTTONS_PATH . '/templates/field-collection-item--field-hot-button',
-      'theme path' => HOT_BUTTONS_PATH,
+      'template' => 'templates/field-collection-item--field-hot-button',
       'type' => 'module'
     );
+  $theme_registry['field__field_hot_button'] =
+    array(
+      'function' => 'theme_field__field_hot_button',
+      'type' => 'module'
+    );
+  $theme_registry['fieldable_panels_pane__hot_buttons'] =
+    array(
+      'template' => 'templates/fieldable-panels-pane--hot-buttons',
+      'type' => 'module'
+    );
+  return $theme_registry;
+
+}
 
 
+function theme_field__field_hot_button(&$variables){
+  $output = '';
+  foreach ($variables['items'] as $delta => $item) {
+    drupal_render($item);
+  }
+  return $output;
 }
