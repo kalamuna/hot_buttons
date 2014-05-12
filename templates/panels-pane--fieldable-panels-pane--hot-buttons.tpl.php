@@ -24,7 +24,7 @@
   <?php if ($admin_links): ?>
     <?php print $admin_links; ?>
   <?php endif; ?>
-
+  <h1> Tempalte Success</h1>
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
