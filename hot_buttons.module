@@ -58,10 +58,8 @@ function hot_buttons_field_collection_item_view($field_collection_item, $view_mo
  */
 function hot_buttons_preprocess_panels_pane($variables){
   if(isset($variables['content']['#bundle']) && $variables['content']['#bundle'] == 'hot_buttons'){
-    if(isset($variables['content']['field_hot_button'])){
-      $variables['content']['field_hot_button']['theme'] = 'markup';
-    }
     if(isset($variables['content']['field_button_group'])){
+      $btn_group  = '';
 
     }
   }
@@ -84,6 +82,7 @@ function hot_buttons_theme() {
   $theme_registry['fieldable_panels_pane__hot_buttons'] =
     array(
       'template' => 'templates/fieldable-panels-pane--hot-buttons',
+      'render element' => 'elements',
       'type' => 'module'
     );
   return $theme_registry;
