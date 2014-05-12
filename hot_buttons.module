@@ -24,3 +24,26 @@ function hot_buttons_entity_info_alter(&$entity_info){
     ),
   );
 }
+
+
+function hot_buttons_field_collection_item_view($field_collection_item, $view_mode, $langcode) {
+  $content = $field_collection_item->content;
+  if($content['#bundle'] == 'field_hot_button'){
+    $style = 'btn-default';
+    $size = '';
+    if(isset($content['field_button_style']['#items'][0]['value'])){
+      $style =  $content['field_button_style']['#items'][0]['value'];
+      unset($content['field_button_style']);
+    }
+    if(isset($content['field_button_size']['#items'][0]['value'])){
+      $size = $content['field_button_size']['#items'][0]['value'];
+      unset($content['field_button_size']);
+    }
+    $content['field_button_link'][0]['#element']['attributes'] = array(
+      'class' => implode(' ', array('btn', $style, $size)) 
+    );
+    $field_collection_item->content = $content;
+    dpm($field_collection_item);
+  }
+
+}

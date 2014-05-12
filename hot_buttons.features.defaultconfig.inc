@@ -27,7 +27,7 @@ function hot_buttons_defaultconfig_field_default_fields() {
   $fields['fieldable_panels_pane-hot_buttons-field_hot_button'] = array(
     'field_config' => array(
       'active' => 1,
-      'cardinality' => 5,
+      'cardinality' => -1,
       'deleted' => 0,
       'entity_types' => array(),
       'field_name' => 'field_hot_button',
@@ -68,8 +68,8 @@ function hot_buttons_defaultconfig_field_default_fields() {
       ),
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_hot_button',
-      'label' => 'Button',
-      'required' => 0,
+      'label' => 'Bootstrap Button',
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -86,7 +86,7 @@ function hot_buttons_defaultconfig_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('<a href="http://getbootstrap.com/css/#buttons">Bootstrap Buttons</a>');
-  t('Button');
+  t('Bootstrap Button');
 
   return $fields;
 }

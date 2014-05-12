@@ -159,8 +159,8 @@ function hot_buttons_field_default_field_instances() {
     ),
     'entity_type' => 'fieldable_panels_pane',
     'field_name' => 'field_hot_button',
-    'label' => 'Button',
-    'required' => 0,
+    'label' => 'Bootstrap Button',
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -186,7 +186,7 @@ function hot_buttons_field_default_field_instances() {
   t('<a href="http://getbootstrap.com/css/#buttons">Bootstrap Buttons</a>');
   t('<p>Fancy larger or smaller buttons? Add <code>.btn-lg</code>, <code>.btn-sm</code>, or <code>.btn-xs</code> for additional sizes.</p>
 <p><a href="http://getbootstrap.com/css/#buttons-sizes">Bootstrap: Button Sizes</a></p>');
-  t('Button');
+  t('Bootstrap Button');
   t('Link');
   t('Provide a valid url and title for your button.');
   t('Size');

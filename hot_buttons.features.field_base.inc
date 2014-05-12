@@ -103,7 +103,7 @@ function hot_buttons_field_default_field_bases() {
   // Exported field_base: 'field_hot_button'
   $field_bases['field_hot_button'] = array(
     'active' => 1,
-    'cardinality' => 5,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_hot_button',
