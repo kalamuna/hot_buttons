@@ -14,7 +14,7 @@ function hot_buttons_entity_info_alter(&$entity_info){
   // Basic table
   $entity_info['fieldable_panels_pane']['bundles']['hot_buttons'] = array(
     'label' => t('Button'),
-    'pane category' => t('Widgets'),
+    'pane category' => t('HotWidgets!'),
     'pane top level' => FALSE,
     'pane icon' => HOT_BUTTONS_PATH . '/images/icon_button.png',
     'admin' => array(
